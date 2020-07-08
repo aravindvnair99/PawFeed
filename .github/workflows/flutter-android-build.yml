@@ -1,0 +1,15 @@
+name: Flutter Android Build CI
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - uses: actions/setup-java@master
+      with:
+        java-version: '12.x'
+    - uses: subosito/flutter-action@master
+    - run: flutter pub get
+    - run: flutter build appbundle --target-platform android-arm,android-arm64,android-x64
