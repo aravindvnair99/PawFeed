@@ -11,8 +11,6 @@ jobs:
       with:
         java-version: '12.x'
     - uses: subosito/flutter-action@master
-      with:
-        channel: 'stable'
     - run: flutter pub get
     - run: flutter format --set-exit-if-changed .
     - run: flutter analyze .
